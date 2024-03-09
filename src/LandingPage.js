@@ -11,11 +11,11 @@ import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import AppAppBar from './components/AppAppBar';
 import Hero from './components/Hero';
 import LogoCollection from './components/LogoCollection';
-import Highlights from './components/Highlights';
+// import Highlights from './components/Highlights';
 import Pricing from './components/Pricing';
 import Features from './components/Features';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
+// import Testimonials from './components/Testimonials';
+// import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import getLPTheme from './getLPTheme';
 
@@ -84,13 +84,13 @@ export default function LandingPage() {
         <LogoCollection />
         <Features />
         <Divider />
-        <Testimonials /> 
-        <Divider />
-        <Highlights /> 
-        <Divider />
+        {/* <Testimonials />  */}
+        {/* <Divider /> */}
+        {/* <Highlights />  */}
+        {/* <Divider /> */}
         <Pricing />
         <Divider />
-        <FAQ /> 
+        {/* <FAQ />  */}
         <Divider />
         <Footer />
       </Box>

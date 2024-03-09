@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,14 +12,13 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import logo from '../nav_logo.png'
-
 const logoStyle = {
   width: '140px',
   height: 'auto',
   cursor: 'pointer',
 };
 
-function AppAppBar({ mode, toggleColorMode }) {
+function AppAppBar({ mode, toggleColorMode}) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -60,7 +58,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              //borderRadius: '999px',
+              borderRadius: '999px',
               bgcolor:
                 theme.palette.mode === 'light'
                   ? 'rgba(255, 255, 255, 0.4)'
@@ -93,31 +91,31 @@ function AppAppBar({ mode, toggleColorMode }) {
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
-                  onClick={() => scrollToSection('features')}
+                  //onClick={() => scrollToSection('features')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Features
+                    Product
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection('testimonials')}
+                  //onClick={() => scrollToSection('testimonials')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Testimonials
+                    Solution
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection('highlights')}
+                  //onClick={() => scrollToSection('highlights')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Highlights
+                    Docs
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection('pricing')}
+                  //onClick={() => scrollToSection('pricing')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -125,11 +123,11 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection('faq')}
+                  //onClick={() => scrollToSection('faq')}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    FAQ
+                    Developers
                   </Typography>
                 </MenuItem>
               </Box>
@@ -142,7 +140,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               }}
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
+              <Button className='bg-black'
                 color="primary"
                 variant="text"
                 size="small"
@@ -153,7 +151,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 Sign in
               </Button>
               <Button
-                color="primary"
+                color= "primary"
                 variant="contained"
                 size="small"
                 component="a"
@@ -192,19 +190,21 @@ function AppAppBar({ mode, toggleColorMode }) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection('features')}>
-                    Features
+                  <MenuItem>
+                    Product
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>
-                    Testimonials
+                  <MenuItem >
+                    Solution
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('highlights')}>
-                    Highlights
+                  <MenuItem >
+                    Docs
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>
+                  <MenuItem >
                     Pricing
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+                  <MenuItem>
+                  Developers
+                  </MenuItem> 
                   <Divider />
                   <MenuItem>
                     <Button

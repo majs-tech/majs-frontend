@@ -31,7 +31,7 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+        <Stack spacing={3} useFlexGap sx={{ width: { xs: '100%', sm: '90%' } }}>
           <Typography
             component="h1"
             variant="h1"
@@ -42,8 +42,7 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Empower Your Projects with Effortless Cloud 
-            &nbsp;Deployment.
+            Empower Your Projects with Effortless Cloud Deployment.
             <Typography
               component="span"
               variant="h1"
@@ -78,11 +77,11 @@ export default function Hero() {
               }}
             />
             <Button variant="contained" color="primary">
-              Start now
+              Start for free
             </Button>
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
+            By clicking &quot;Start for free&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
               Terms & Conditions
             </Link>
