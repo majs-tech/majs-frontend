@@ -11,7 +11,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
-import logo from '../nav_logo.png'
 const logoStyle = {
   width: '140px',
   height: 'auto',
@@ -25,19 +24,19 @@ function AppAppBar({ mode, toggleColorMode}) {
     setOpen(newOpen);
   };
 
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      setOpen(false);
-    }
-  };
+  // const scrollToSection = (sectionId) => {
+  //   const sectionElement = document.getElementById(sectionId);
+  //   const offset = 128;
+  //   if (sectionElement) {
+  //     const targetScroll = sectionElement.offsetTop - offset;
+  //     sectionElement.scrollIntoView({ behavior: 'smooth' });
+  //     window.scrollTo({
+  //       top: targetScroll,
+  //       behavior: 'smooth',
+  //     });
+  //     setOpen(false);
+  //   }
+  // };
 
   return (
     <div>
@@ -47,10 +46,11 @@ function AppAppBar({ mode, toggleColorMode}) {
           boxShadow: 0,
           bgcolor: 'transparent',
           backgroundImage: 'none',
+          mt: 0,
           mt: 2,
         }}
       >
-        <Container maxWidth="lg">
+        <Container>
           <Toolbar
             variant="regular"
             sx={(theme) => ({
@@ -58,13 +58,13 @@ function AppAppBar({ mode, toggleColorMode}) {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              borderRadius: '999px',
+              borderRadius: '90px',
               bgcolor:
                 theme.palette.mode === 'light'
                   ? 'rgba(255, 255, 255, 0.4)'
                   : 'rgba(0, 0, 0, 0.4)',
               backdropFilter: 'blur(24px)',
-              maxHeight: 40,
+              maxHeight: 50,
               border: '1px solid',
               borderColor: 'divider',
               boxShadow:
@@ -79,20 +79,18 @@ function AppAppBar({ mode, toggleColorMode}) {
                 display: 'flex',
                 alignItems: 'center',
                 ml: '-18px',
-                px: 0,
+                p: 2,
               }}
             >
               <img
-                src={
-                  logo
-                }
+                src='https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996757/majs-tech/nav_logo_t9nfft.png'
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt=""
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
                   //onClick={() => scrollToSection('features')}
-                  sx={{ py: '6px', px: '12px' }}
+                  sx={{ py: '6px', px: '15px' }}
                 >
                   <Typography variant="body2" color="text.primary">
                     Product

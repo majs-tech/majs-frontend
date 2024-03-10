@@ -16,25 +16,25 @@ import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    title: 'Easy Deployment',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      'majs.tech offers effortless project deployment with a user-friendly interface for both beginners and seasoned developers. With just a few clicks, input your project details, choose a cloud provider, and click Deploy to turn your ideas into reality effortlessly.',
     imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    title: ' Cloud Agnosticism',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      'Explore the benefits of seamlessly switching between cloud providers on this page. Majs.tech gives you the flexibility to choose the ideal cloud for your project needs, ensuring a tailored deployment experience.',
     imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
     icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    title: 'Multi-Cloud Freedom',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
+      'Deploy your project effortlessly on major cloud platforms like AWS, GCP, and Azure with Majs.tech. Additionally, enjoy the flexibility of multi-cloud deployment, giving you the freedom to choose the most suitable cloud environment for your needs.',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },
@@ -54,17 +54,14 @@ export default function Features() {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
-            <Typography component="h2" variant="h4" color="text.primary">
-              Product features
+            <Typography component="h1" variant="h2" color="text.primary">
+              Features
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the types
-              of features, add-ons, or the benefits of the features.
             </Typography>
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>

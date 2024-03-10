@@ -2,16 +2,16 @@ import { alpha } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 export const brand = {
-  50: '#F0F7FF',
-  100: '#CEE5FD',
-  200: '#9CCCFC',
-  300: '#55A6F6',
-  400: '#0A66C2',
-  500: '#0959AA',
-  600: '#064079',
-  700: '#033363',
-  800: '#02294F',
-  900: '#021F3B',
+  50: '#f6f6f6',
+  100: '#ececec',
+  200: '#dfdfdf',
+  300: '#cccccc',
+  400: '#a6a6a6',
+  500: '#858585',
+  600: '#5e5e5e',
+  700: '#4b4b4b',
+  800: '#2e2e2e',
+  900: '#0d0d0d',
 };
 
 export const secondary = {
@@ -130,10 +130,10 @@ const getDesignTokens = (mode) => ({
     },
   },
   typography: {
-    fontFamily: ['"Inter", "sans-serif"'].join(','),
+    fontFamily: ['"Inter"'].join(','),
     h1: {
-      fontSize: 60,
-      fontWeight: 600,
+      fontSize: 65,
+      fontWeight: 650,
       lineHeight: 78 / 70,
       letterSpacing: -0.2,
     },
@@ -152,7 +152,7 @@ const getDesignTokens = (mode) => ({
       lineHeight: 1.5,
     },
     h5: {
-      fontSize: 20,
+      fontSize: 25,
       fontWeight: 600,
     },
     h6: {
@@ -166,7 +166,7 @@ const getDesignTokens = (mode) => ({
     },
     body1: {
       fontWeight: 400,
-      fontSize: 15,
+      fontSize: 18 ,
     },
     body2: {
       fontWeight: 400,
