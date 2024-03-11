@@ -12,6 +12,7 @@ import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import AppAppBar from "./components/AppAppBar";
@@ -22,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
+  },
+  formBox: {
+    
+    width: "100%",
+    padding:"20px 40px 20px 40px",
+    background: "rgba( 176, 185, 232, 0.15 )",
+    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+    backdropFilter: "blur( 3px )",
+    borderRadius: "10px",
+    border: "1px solid rgba( 255, 255, 255, 0.18 )",
   },
   form: {
     width: "100%",
@@ -72,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
 
   dropdown: {
     width: "100%",
-    margin: "10px",
   },
   button: {
     width: "100%",
@@ -102,71 +112,75 @@ export default function ProductPage() {
   return (
     <div className={classes.root}>
       <AppAppBar />
-      <Grid container className={classes.form}>
-        <Grid container item xs={12} sm={5} className={classes.formItems}>
-          <div className={classes.textFieldContainer}>
-            <TextField
-              className={classes.textField}
-              placeholder="Enter Project Name"
-              variant="outlined"
-              value={projectName}
-              onChange={(e) => setprojectName(e.target.value)}
-            />
-          </div>
 
-          <div className={classes.textFieldContainer}>
-            <TextField
-              className={classes.textField}
-              placeholder="GitHub Repository Link"
-              variant="outlined"
-              value={repoLink}
-              onChange={(e) => setRepoLink(e.target.value)}
-            />
-          </div>
-          <div className={classes.dropdownContainer}>
-            <Grid item xs={10} sm={5} className={classes.dropdown}>
-              <FormControl variant="outlined" className={classes.dropdown}>
-                <InputLabel>Frontend</InputLabel>
-                <Select
-                  value={frontend}
-                  onChange={(e) => setFrontend(e.target.value)}
-                  label="Frontend"
-                >
-                  <MenuItem value="React">React</MenuItem>
-                  <MenuItem value="Angular">Angular</MenuItem>
-                  <MenuItem value="Vue">Vue</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={10} sm={5} className={classes.dropdown}>
-              <FormControl variant="outlined" className={classes.dropdown}>
-                <InputLabel>Backend</InputLabel>
-                <Select
-                  value={backend}
-                  onChange={(e) => setBackend(e.target.value)}
-                  label="Backend"
-                >
-                  <MenuItem value="Node.js">Node.js</MenuItem>
-                  <MenuItem value="Django">Django</MenuItem>
-                  <MenuItem value="Spring">Spring</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-          </div>
-          <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-            onClick={handleDeploy}
-            disabled={!repoLink || deploying}
-          >
-            {deploying ? (
-              <CircularProgress size={24} color="inherit" />
-            ) : (
-              "Deploy"
-            )}
-          </Button>
+      <Grid container className={classes.form}>
+        <Grid container item xs={12} sm={5.5} className={classes.formItems}>
+          <Box className={classes.formBox}>
+            <div className={classes.textFieldContainer}>
+              <TextField
+                className={classes.textField}
+                placeholder="Enter Project Name"
+                variant="outlined"
+                value={projectName}
+                onChange={(e) => setprojectName(e.target.value)}
+              />
+            </div>
+
+            <div className={classes.textFieldContainer}>
+              <TextField
+                className={classes.textField}
+                placeholder="GitHub Repository Link"
+                variant="outlined"
+                value={repoLink}
+                onChange={(e) => setRepoLink(e.target.value)}
+              />
+            </div>
+            <div className={classes.dropdownContainer}>
+              <Grid item xs={10} sm={5} className={classes.dropdown} style={{ margin: "20px" }}>
+                <FormControl variant="outlined" className={classes.dropdown}>
+                  <InputLabel>Frontend</InputLabel>
+                  <Select
+                    value={frontend}
+                    onChange={(e) => setFrontend(e.target.value)}
+                    label="Frontend"
+                  >
+                    <MenuItem value="React">React</MenuItem>
+                    <MenuItem value="Angular">Angular</MenuItem>
+                    <MenuItem value="Vue">Vue</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={10} sm={5} className={classes.dropdown} style={{ margin: "20px" }}>
+                <FormControl variant="outlined" className={classes.dropdown}>
+                  <InputLabel>Backend</InputLabel>
+                  <Select
+                    value={backend}
+                    onChange={(e) => setBackend(e.target.value)}
+                    label="Backend"
+                  >
+                    <MenuItem value="Node.js">Node.js</MenuItem>
+                    <MenuItem value="Django">Django</MenuItem>
+                    <MenuItem value="Spring">Spring</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+            </div>
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="primary"
+              onClick={handleDeploy}
+              disabled={!repoLink || deploying}
+            >
+              {deploying ? (
+                <CircularProgress size={24} color="inherit" />
+              ) : (
+                "Deploy"
+              )}
+            </Button>
+          </Box>
         </Grid>
+
         <Grid container item xs={12} sm={5} className={classes.formItems}>
           <Card variant="outlined">
             <CardContent>
