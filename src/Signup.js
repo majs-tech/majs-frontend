@@ -27,6 +27,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // }
 
 
+const defaultTheme = createTheme();
 
 export default function SignInSide() {
   const handleSubmit = (event) => {
@@ -39,14 +40,14 @@ export default function SignInSide() {
   };
 
   return (
-      <Grid container component="main" sx={{ height: '100vh' }}> 
+      <Grid container component="main" sx={{ height: '100vh' }}>
         <Grid
           item
           xs={false}
           sm={4}
           md={6}
           sx={{
-            backgroundImage: 'url(https://res.cloudinary.com/dnvh2fya6/image/upload/v1710107813/majs-tech/canva101_xax6ph.png)',
+            backgroundImage: 'url(https://res.cloudinary.com/dnvh2fya6/image/upload/v1710138718/majs-tech/canva103_lzp2xu.png)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode = t.palette.grey[900],
@@ -68,7 +69,7 @@ export default function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Welcome back to majs.tech!
+              Welcome to majs.tech!
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -101,7 +102,7 @@ export default function SignInSide() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item xs>

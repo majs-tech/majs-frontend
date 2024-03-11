@@ -11,6 +11,8 @@ import AppAppBar from "./components/AppAppBar";
 import getLPTheme from "./getLPTheme";
 import ProductPage from "./ProductPage";
 import LandingPage from "./LandingPage";
+import Signin from "./Signin";
+import Signup from "./Signup";
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/product" component={ProductPage} />
+          <Route path="/signin" component={Signin}/>
+          <Route path="/signup" component={Signup}/>
         </Switch>
       </Router>
     </ThemeProvider>

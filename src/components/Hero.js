@@ -30,7 +30,7 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={3} useFlexGap sx={{ width: { xs: '100%', sm: '90%' } }}>
+        <Stack spacing={3} useFlexGap sx={{ width: { xs: '90%', sm: '90%' } }}>
           <Typography
             component="h1"
             variant="h1"

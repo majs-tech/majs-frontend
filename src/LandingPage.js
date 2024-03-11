@@ -1,7 +1,5 @@
 import * as React from "react";
 // import PropTypes from 'prop-types';
-
-
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 // import ToggleButton from '@mui/material/ToggleButton';
@@ -16,16 +14,20 @@ import Features from "./components/Features";
 // import FAQ from './components/FAQ';
 import Footer from "./components/Footer";
 import Secondary from "./components/Secondary";
+import { useMediaQuery } from "@mui/material";
+
 
 export default function LandingPage() {
+  const isMediumScreen = useMediaQuery("(min-width: 960px)");
+
   return (
-    <>
-      <Hero />
+    <div>
+      <Hero/>
       <Box sx={{ bgcolor: "background.default" }}>
         <Divider />
         <LogoCollection />
         <Divider />
-        <Secondary />
+        {isMediumScreen && <Secondary />}
         <Divider />
         <Features />
         <Divider />
@@ -39,6 +41,6 @@ export default function LandingPage() {
         <Divider />
         <Footer />
       </Box>
-    </>
+    </div>
   );
 }
