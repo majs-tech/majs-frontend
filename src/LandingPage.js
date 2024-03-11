@@ -15,13 +15,14 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Secondary from "./components/Secondary";
 import { useMediaQuery } from "@mui/material";
-
+import AppAppBar from "./components/AppAppBar";
 
 export default function LandingPage() {
   const isMediumScreen = useMediaQuery("(min-width: 960px)");
 
   return (
     <div>
+      <AppAppBar />
       <Hero/>
       <Box sx={{ bgcolor: "background.default" }}>
         <Divider />

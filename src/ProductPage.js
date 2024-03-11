@@ -14,6 +14,7 @@ import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import AppAppBar from "./components/AppAppBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,6 +101,7 @@ export default function ProductPage() {
 
   return (
     <div className={classes.root}>
+      <AppAppBar />
       <Grid container className={classes.form}>
         <Grid container item xs={12} sm={5} className={classes.formItems}>
           <div className={classes.textFieldContainer}>

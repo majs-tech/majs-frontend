@@ -16,19 +16,12 @@ import Signup from "./Signup";
 
 
 function App() {
-  const [mode, setMode] = React.useState("dark");
-  const [showCustomTheme] = React.useState(true);
-  const LPtheme = createTheme(getLPTheme(mode));
-  const defaultTheme = createTheme({ palette: { mode } });
+  const LPtheme = createTheme(getLPTheme("dark"));
 
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === "dark" ? "light" : "dark"));
-  };
   return (
-    <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
+    <ThemeProvider theme={LPtheme}>
       <CssBaseline />
-      <Router>
-        <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+      <Router> 
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/product" component={ProductPage} />
