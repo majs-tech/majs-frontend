@@ -26,17 +26,33 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
     height: "auto",
   },
-  title:{
-    width:"350px",
-    textAlign:"center",
-    paddingBottom:"20px"
-  }
-}));
+  title: {
+    width: "350px",
+    textAlign: "center",
+    paddingBottom: "20px",
+  },
+  formBox: {
+    my: 8,
+    mx: 4,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "0px 95px 0px 95px",
 
+    [theme.breakpoints.down("sm")]: {
+      margin: "0px 30px 0px 30px",
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "0px 95px 0px 95px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      margin: "0px 95px 0px 95px",
+    },
+  },
+}));
 
 export default function SignIn() {
   const classes = useStyles();
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -64,20 +80,11 @@ export default function SignIn() {
         }}
       />
       <Grid item xs={12} sm={8} md={6} elevation={6} square>
-        <Box
-          sx={{
-            my: 8,
-            mx: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            margin:"30px 100px 0px 100px",
-            
-          }}
-        >
-          <img className={classes.logo}
+        <Box className={classes.formBox}>
+          <img
+            className={classes.logo}
             src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
-            sx={{ m: 1, bgcolor: "secondary.main", width:"2000px" }}
+            sx={{ m: 1, bgcolor: "secondary.main", width: "2000px" }}
             alt=""
           />
 
@@ -118,7 +125,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, }}
+              sx={{ mt: 3, mb: 2 }}
             >
               Sign In
             </Button>

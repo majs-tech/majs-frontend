@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -26,21 +26,47 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
     height: "auto",
   },
-  title:{
-    width:"350px",
-    textAlign:"center",
-    paddingBottom:"20px"
-  }
-}));
+  title: {
+    width: "350px",
+    textAlign: "center",
+    paddingBottom: "20px",
+  },
+  formBox: {
+    my: 8,
+    mx: 4,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "0px 95px 0px 95px",
 
+    [theme.breakpoints.down("sm")]: {
+      margin: "0px 30px 0px 30px",
+    },
+    [theme.breakpoints.up("md")]: {
+      margin: "0px 95px 0px 95px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      margin: "0px 95px 0px 95px",
+    },
+  },
+}));
 
 export default function SignUp() {
   const classes = useStyles();
+  const [isChecked, setIsChecked] = useState(false);
 
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    if (!isChecked) {
+      alert("Please agree to the Terms & Conditions");
+      return;
+    }
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -64,24 +90,13 @@ export default function SignUp() {
         }}
       />
       <Grid item xs={12} sm={8} md={6} elevation={6} square>
-        <Box
-          sx={{
-            my: 8,
-            mx: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            margin:"0px 100px 0px 100px",
-            
-          }}
-        >
-          <img className={classes.logo}
+        <Box className={classes.formBox}>
+          <img
+            className={classes.logo}
             src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
-            sx={{ m: 1, bgcolor: "secondary.main", width:"2000px" }}
+            sx={{ m: 1, bgcolor: "secondary.main" }}
             alt=""
           />
-          
-
           <Typography component="h1" variant="h5" className={classes.title}>
             Welcome to majs.tech!
           </Typography>
@@ -110,7 +125,7 @@ export default function SignUp() {
               type="password"
               id="password"
             />
-            
+
             <TextField
               margin="normal"
               required
@@ -121,23 +136,31 @@ export default function SignUp() {
               id="password"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              control={
+                <Checkbox
+                  value="agree"
+                  color="primary"
+                  required
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label={
+                <Typography variant="body2" style={{ fontSize: "1rem" }}>
+                  By clicking on Sign Up, you agree to our Terms & Conditions.
+                </Typography>
+              }
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, }}
+              sx={{ mt: 3, mb: 2 }}
+              onSubmit={handleSubmit}
             >
               Sign Up
             </Button>
             <Grid container>
-              <Grid item xs={8}>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/signup" variant="body2">
                   {"Already have an account? Sign In"}

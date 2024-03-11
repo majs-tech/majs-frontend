@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   formBox: {
-    
     width: "100%",
-    padding:"20px 40px 20px 40px",
+    padding: "20px 20px 20px 20px",
+    marginBottom: "20px",
     background: "rgba( 176, 185, 232, 0.15 )",
     boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
     backdropFilter: "blur( 3px )",
@@ -136,31 +136,44 @@ export default function ProductPage() {
               />
             </div>
             <div className={classes.dropdownContainer}>
-              <Grid item xs={10} sm={5} className={classes.dropdown} style={{ margin: "20px" }}>
+              <Grid
+                item
+                xs={10}
+                sm={5}
+                variant="outlined"
+                className={classes.dropdown}
+                style={{ margin: "20px 0px 20px 10px" }}
+              >
                 <FormControl variant="outlined" className={classes.dropdown}>
                   <InputLabel>Frontend</InputLabel>
                   <Select
                     value={frontend}
                     onChange={(e) => setFrontend(e.target.value)}
                     label="Frontend"
+                    style={{ borderRadius: "17px" }}
                   >
+                    <MenuItem value="HTML">HTML</MenuItem>
                     <MenuItem value="React">React</MenuItem>
-                    <MenuItem value="Angular">Angular</MenuItem>
-                    <MenuItem value="Vue">Vue</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={10} sm={5} className={classes.dropdown} style={{ margin: "20px" }}>
+              <Grid
+                item
+                xs={10}
+                sm={5}
+                className={classes.dropdown}
+                style={{ margin: "20px 0px 20px 10px" }}
+              >
                 <FormControl variant="outlined" className={classes.dropdown}>
                   <InputLabel>Backend</InputLabel>
                   <Select
                     value={backend}
                     onChange={(e) => setBackend(e.target.value)}
                     label="Backend"
+                    style={{ borderRadius: "17px" }}
                   >
+                    <MenuItem value="Javascript">Javascript</MenuItem>
                     <MenuItem value="Node.js">Node.js</MenuItem>
-                    <MenuItem value="Django">Django</MenuItem>
-                    <MenuItem value="Spring">Spring</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

@@ -96,19 +96,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  //onClick={() => scrollToSection('testimonials')}
-                  sx={{ py: "6px", px: "12px" }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    <Link
-                      to="/solution"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      Solution
-                    </Link>
-                  </Typography>
-                </MenuItem>
-                <MenuItem
                   //onClick={() => scrollToSection('highlights')}
                   sx={{ py: "6px", px: "12px" }}
                 >
@@ -224,14 +211,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       Product
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link
-                      to="/solution"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      Solution
                     </Link>
                   </MenuItem>
                   <MenuItem>
