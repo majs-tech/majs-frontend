@@ -13,6 +13,7 @@ import ProductPage from "./ProductPage";
 import LandingPage from "./LandingPage";
 import Signin from "./Signin";
 import Signup from "./Signup";
+import Pro from "./Pro";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       <Router> 
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/product" component={ProductPage} />
+          <Route path="/product" component={Pro} />
           <Route path="/signin" component={Signin}/>
           <Route path="/signup" component={Signup}/>
         </Switch>

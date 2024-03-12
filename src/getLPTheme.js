@@ -144,6 +144,7 @@ const getDesignTokens = (mode) => ({
     },
     h3: {
       fontSize: 42,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h4: {

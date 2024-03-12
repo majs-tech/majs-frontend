@@ -8,6 +8,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
 
 // function Copyright(props) {
 //   return (
@@ -52,6 +54,58 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+  const history = useHistory()
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  let name, value;
+
+  const handleInputs = (e) => {
+    console.log(e);
+    //name = e.target.name;
+    value = e.target.value;
+    setUser({ ...user, [e.target.id]: value });
+  };
+
+  const MakeAPICall = async (e) => {
+    e.preventDefault();
+    console.log("REACHED HERE")
+    const { email, password } = user;
+    // const res = await fetch("http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001/auth/signup", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email,
+    //     password,
+    //   }),
+    // });
+    const payload = {
+      username : email, password : password
+    }
+    console.log(payload)
+    const res = await axios.post("http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001/auth/signup", payload)
+    console.log(res)
+
+    // const data = await res.json();
+    // if ((data.status === 422 || !data)) {
+    //   window.alert("INvalid Registration");
+    //   console.log("INvalid Registration");
+    // } else {
+    
+    // }
+    if (res.status == 200) {
+      window.alert(" Registration Successfull");
+      console.log("Successfull Registration");
+      history.push("/product");
+    } else {
+      window.alert("INvalid Registration");
+      console.log("INvalid Registration");
+    }
+  };
+
   const classes = useStyles();
   const [isChecked, setIsChecked] = useState(false);
 
@@ -105,7 +159,7 @@ export default function SignUp() {
             noValidate
             onSubmit={handleSubmit}
             sx={{ mt: 1 }}
-          >
+          ><form method="POST">
             <TextField
               margin="normal"
               required
@@ -113,6 +167,8 @@ export default function SignUp() {
               id="email"
               placeholder="Email Address"
               name="email"
+              defaultValue={user.email}
+              onChange={handleInputs}
               autoComplete="email"
               autoFocus
             />
@@ -122,6 +178,8 @@ export default function SignUp() {
               fullWidth
               name="password"
               placeholder="Password"
+              defaultValue={user.password}
+              onChange={handleInputs}
               type="password"
               id="password"
             />
@@ -156,7 +214,7 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onSubmit={handleSubmit}
+              onClick={MakeAPICall}
             >
               Sign Up
             </Button>
@@ -168,7 +226,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
             {/* <Copyright sx={{ mt: 5 }} /> */}
-          </Box>
+            </form></Box>
         </Box>
       </Grid>
     </Grid>

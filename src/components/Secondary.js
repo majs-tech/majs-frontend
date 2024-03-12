@@ -14,12 +14,20 @@ import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
 import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
 
+const cloudStyle = {
+  height: "80%",
+  border: "1px solid",
+  borderRadius: "10px",
+};
+
 export default function Secondary() {
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={
+        (theme) => ({
         width: "100%",
+        marginTop:"-150px",
         backgroundImage:
           theme.palette.mode === "light"
             ? "linear-gradient(#CEE5FD)"
@@ -37,7 +45,6 @@ export default function Secondary() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-
         <Grid
           container
           spacing={2}
@@ -60,49 +67,67 @@ export default function Secondary() {
                 : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
           })}
         >
-            <Grid xs={8} sx={{ padding: 7 }}>
+          <Grid xs={8} sx={{ padding: 7 }}>
             <Stack>
-                <Button variant="contained" color="primary">
-                    Easy Deployment
-                </Button>
-                <Typography
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ width: "150px" }}
+              >
+                Easy Deployment
+              </Button>
+              <Typography
                 component="span"
                 variant="h3"
                 sx={{
                   paddingTop: 3,
                   color: (theme) =>
-                    theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
                 }}
-                >
+              >
                 Effortless Deployment in a Few Clicks!
-                </Typography>
-                <Typography
+              </Typography>
+              <Typography
                 component="span"
                 variant="subtitle2"
                 sx={{
-                    paddingTop: 2,
-                    textAlign: { sm: 'left', md: 'left' },
+                  paddingTop: 2,
+                  textAlign: { sm: "left", md: "left" },
                   color: (theme) =>
-                    theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
                 }}
-                >
-                Dive into the world of effortless project deployment at Majs.tech! Our user-friendly interface welcomes both beginners and seasoned developers, offering a seamless experience. Say farewell to intricate setups; with just a few clicks, input your project details, choose your preferred cloud provider, and click 'Deploy.' It's that simple—turn your ideas into reality with Majs.tech, where deployment is a breeze!
-                </Typography>
+              >
+                Dive into the world of effortless project deployment at
+                Majs.tech! Our user-friendly interface welcomes both beginners
+                and seasoned developers, offering a seamless experience. Say
+                farewell to intricate setups; with just a few clicks, input your
+                project details, choose your preferred cloud provider, and click
+                'Deploy.' It's that simple—turn your ideas into reality with
+                Majs.tech, where deployment is a breeze!
+              </Typography>
             </Stack>
+          </Grid>
 
-            </Grid>
-            
-            <Grid xs={8}>
-                {/* <img
-                src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1710104821/majs-tech/dummy_qmwkbk.png"
-                alt="#"
-
-                >
-                </img> */}
-            </Grid>
+          <Grid
+            xs={7}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1710223021/majs-tech/cloud2_l8auwk.png"
+              alt="#"
+              style={cloudStyle}
+            ></img>
+          </Grid>
         </Grid>
-        
-        
+
         <Grid
           container
           spacing={2}
@@ -125,48 +150,66 @@ export default function Secondary() {
                 : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
           })}
         >
-            <Grid xs={8}>
-                {/* <img
-                src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1710104821/majs-tech/dummy_qmwkbk.png"
-                alt="#"
+          <Grid
+            xs={7}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1710223024/majs-tech/cloud_v6ayok.png"
+              alt="#"
+              style={cloudStyle}
+            ></img>
+          </Grid>
 
-                >
-                </img> */}
-            </Grid>
-            
-            <Grid xs={8} sx={{ padding: 7 }}>
+          <Grid xs={8} sx={{ padding: 7 }}>
             <Stack>
-                <Button variant="contained" color="primary">
-                    Easy Deployment
-                </Button>
-                <Typography
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ width: "150px", marginLeft: "auto" }}
+              >
+                Easy Deployment
+              </Button>
+              <Typography
                 component="span"
                 variant="h3"
                 sx={{
                   paddingTop: 3,
+                  textAlign: "right",
                   color: (theme) =>
-                    theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
                 }}
-                >
+              >
                 Effortless Deployment in a Few Clicks!
-                </Typography>
-                <Typography
+              </Typography>
+              <Typography
                 component="span"
                 variant="subtitle2"
                 sx={{
-                    paddingTop: 2,
-                    textAlign: { sm: 'left', md: 'left' },
+                  paddingTop: 2,
+                  textAlign: "right",
                   color: (theme) =>
-                    theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
                 }}
-                >
-                Dive into the world of effortless project deployment at Majs.tech! Our user-friendly interface welcomes both beginners and seasoned developers, offering a seamless experience. Say farewell to intricate setups; with just a few clicks, input your project details, choose your preferred cloud provider, and click 'Deploy.' It's that simple—turn your ideas into reality with Majs.tech, where deployment is a breeze!
-                </Typography>
+              >
+                Dive into the world of effortless project deployment at
+                Majs.tech! Our user-friendly interface welcomes both beginners
+                and seasoned developers, offering a seamless experience. Say
+                farewell to intricate setups; with just a few clicks, input your
+                project details, choose your preferred cloud provider, and click
+                'Deploy.' It's that simple—turn your ideas into reality with
+                Majs.tech, where deployment is a breeze!
+              </Typography>
             </Stack>
-
-            </Grid>
-
-
+          </Grid>
         </Grid>
       </Container>
     </Box>

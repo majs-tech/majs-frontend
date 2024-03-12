@@ -61,7 +61,7 @@ export default function Hero() {
             alignSelf="center"
             spacing={1}
             useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
+            sx={{ pt: 5, width: { xs: '100%', sm: 'auto' } }}
           >
             <TextField
               id="outlined-basic"

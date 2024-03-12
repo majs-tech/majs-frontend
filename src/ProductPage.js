@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  Container,
   Button,
   CircularProgress,
   Grid,
@@ -28,9 +29,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "20px 20px 20px 20px",
     marginBottom: "20px",
-    background: "rgba( 176, 185, 232, 0.15 )",
+    // background: "rgba( 176, 185, 232, 0.15 )",
     boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-    backdropFilter: "blur( 3px )",
     borderRadius: "10px",
     border: "1px solid rgba( 255, 255, 255, 0.18 )",
   },
@@ -113,88 +113,145 @@ export default function ProductPage() {
     <div className={classes.root}>
       <AppAppBar />
 
-      <Grid container className={classes.form}>
-        <Grid container item xs={12} sm={5.5} className={classes.formItems}>
-          <Box className={classes.formBox}>
-            <div className={classes.textFieldContainer}>
-              <TextField
-                className={classes.textField}
-                placeholder="Enter Project Name"
-                variant="outlined"
-                value={projectName}
-                onChange={(e) => setprojectName(e.target.value)}
-              />
-            </div>
-
-            <div className={classes.textFieldContainer}>
-              <TextField
-                className={classes.textField}
-                placeholder="GitHub Repository Link"
-                variant="outlined"
-                value={repoLink}
-                onChange={(e) => setRepoLink(e.target.value)}
-              />
-            </div>
-            <div className={classes.dropdownContainer}>
-              <Grid
-                item
-                xs={10}
-                sm={5}
-                variant="outlined"
-                className={classes.dropdown}
-                style={{ margin: "20px 0px 20px 10px" }}
-              >
-                <FormControl variant="outlined" className={classes.dropdown}>
-                  <InputLabel>Frontend</InputLabel>
-                  <Select
-                    value={frontend}
-                    onChange={(e) => setFrontend(e.target.value)}
-                    label="Frontend"
-                    style={{ borderRadius: "17px" }}
-                  >
-                    <MenuItem value="HTML">HTML</MenuItem>
-                    <MenuItem value="React">React</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid
-                item
-                xs={10}
-                sm={5}
-                className={classes.dropdown}
-                style={{ margin: "20px 0px 20px 10px" }}
-              >
-                <FormControl variant="outlined" className={classes.dropdown}>
-                  <InputLabel>Backend</InputLabel>
-                  <Select
-                    value={backend}
-                    onChange={(e) => setBackend(e.target.value)}
-                    label="Backend"
-                    style={{ borderRadius: "17px" }}
-                  >
-                    <MenuItem value="Javascript">Javascript</MenuItem>
-                    <MenuItem value="Node.js">Node.js</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-            </div>
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="primary"
-              onClick={handleDeploy}
-              disabled={!repoLink || deploying}
+      
+      
+          <Grid
+            container
+            className={classes.form}
+            center
+            style={{ marginTop: "30px" }}
+          >
+            <Box
+              
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { sm: "100%", md: "60%" },
+                textAlign: { sm: "left", md: "left" },
+              }}
             >
-              {deploying ? (
-                <CircularProgress size={24} color="inherit" />
-              ) : (
-                "Deploy"
-              )}
-            </Button>
-          </Box>
-        </Grid>
+              <Typography component="h2" variant="h4">
+                Let's build something new.
+              </Typography>
+              <Typography variant="body1" sx={{ color: "grey.400" }}>
+                To deploy a new Project, paste the link of an existing Git
+                Repository
+              </Typography>
+            </Box>
+            
+            <Grid
+              container
+              item
+              xs={12}
+              sm={6}
+              className={classes.formItems}
+              style={{ marginTop: "" }}
+            >
+              <Box className={classes.formBox}>
+                <div className={classes.textFieldContainer}>
+                  <TextField
+                    className={classes.textField}
+                    placeholder="Enter Project Name"
+                    variant="outlined"
+                    value={projectName}
+                    onChange={(e) => setprojectName(e.target.value)}
+                  />
+                </div>
 
-        <Grid container item xs={12} sm={5} className={classes.formItems}>
+                <div className={classes.textFieldContainer}>
+                  <TextField
+                    className={classes.textField}
+                    placeholder="GitHub Repository Link"
+                    variant="outlined"
+                    value={repoLink}
+                    onChange={(e) => setRepoLink(e.target.value)}
+                  />
+                </div>
+                <div className={classes.dropdownContainer}>
+                  <Grid
+                    item
+                    xs={10}
+                    sm={5}
+                    variant="outlined"
+                    className={classes.dropdown}
+                    style={{ margin: "20px 0px 20px 10px" }}
+                  >
+                    <FormControl
+                      variant="outlined"
+                      className={classes.dropdown}
+                    >
+                      <InputLabel>Frontend</InputLabel>
+                      <Select
+                        value={frontend}
+                        onChange={(e) => setFrontend(e.target.value)}
+                        label="Frontend"
+                        style={{ borderRadius: "17px" }}
+                      >
+                        <MenuItem value="HTML">HTML</MenuItem>
+                        <MenuItem value="React">React</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={10}
+                    sm={5}
+                    className={classes.dropdown}
+                    style={{ margin: "20px 0px 20px 10px" }}
+                  >
+                    <FormControl
+                      variant="outlined"
+                      className={classes.dropdown}
+                    >
+                      <InputLabel>Backend</InputLabel>
+                      <Select
+                        value={backend}
+                        onChange={(e) => setBackend(e.target.value)}
+                        label="Backend"
+                        style={{ borderRadius: "17px" }}
+                      >
+                        <MenuItem value="Javascript">Javascript</MenuItem>
+                        <MenuItem value="Node.js">Node.js</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                </div>
+                <Button
+                  className={classes.button}
+                  variant="contained"
+                  color="primary"
+                  onClick={handleDeploy}
+                  disabled={!repoLink || deploying}
+                >
+                  {deploying ? (
+                    <CircularProgress size={24} color="primary" />
+                  ) : (
+                    "Deploy"
+                  )}
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+
+      {/* <Box
+          sx={{
+            width: { sm: '100%', md: '60%' },
+            textAlign: { sm: 'left', md: 'center' },
+          }}
+        >
+          <Typography component="h2" variant="h4">
+          Let's build something new.
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'grey.400' }}>
+          To deploy a new Project, paste the link of an existing Git Repository
+          </Typography>
+        </Box> */}
+    </div>
+  );
+}
+
+{
+  /* <Grid container item xs={12} sm={5} className={classes.formItems}>
           <Card variant="outlined">
             <CardContent>
               <Typography variant="h6">Steps to Deploy</Typography>
@@ -211,11 +268,8 @@ export default function ProductPage() {
                 ultrices posuere cubilia Curae; Morbi sagittis justo nec sapien
                 vehicula volutpat.
               </Typography>
-              {/* Add more steps as needed */}
+              
             </CardContent>
           </Card>
-        </Grid>
-      </Grid>
-    </div>
-  );
+        </Grid> */
 }
