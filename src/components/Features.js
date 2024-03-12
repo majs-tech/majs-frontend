@@ -249,6 +249,11 @@ export default function Features() {
               pointerEvents: 'none',
             }}
           >
+            <img
+            src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
+            alt=""
+            >
+            </img>
             <Box
               sx={{
                 m: 'auto',
