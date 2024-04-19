@@ -1,38 +1,22 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { useTheme } from '@mui/system';
-import { Container } from '@mui/material';
-
-const whiteLogos = [
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710021947/majs-tech/aws-logo-cnv_wwptp4.png',
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710021947/majs-tech/gcp-logo-cnv_sibg2c.png',
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710021947/majs-tech/azure-logo-cnv_tg3mor.png',
-];
-
-const darkLogos = [
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710145468/majs-tech/aws-new_pxfxgu.png',
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710021947/majs-tech/gcp-logo-cnv_sibg2c.png',
-  'https://res.cloudinary.com/dnvh2fya6/image/upload/v1710021947/majs-tech/azure-logo-cnv_tg3mor.png',
-];
-
 
 const awslogoStyle = {
-  width: '150px', // Adjust the width as needed
-  height: '150px', // Adjust the height as needed
+  width: '150px', 
+  height: '150px', 
   margin: '0 70px',
 };
 
 const gcplogoStyle = {
-  width: '290px', // Adjust the width as needed
-  height: '300px', // Adjust the height as needed
+  width: '290px', 
+  height: '300px', 
   margin: '0 70px',
 };
 
 const azurelogoStyle = {
-  width: '290px', // Adjust the width as needed
-  height: '300px', // Adjust the height as needed
+  width: '290px',
+  height: '300px', 
   margin: '0 70px',
 };
 

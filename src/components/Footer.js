@@ -1,15 +1,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import FacebookIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/X";
+
 
 const logoStyle = {
   width: "140px",
@@ -26,47 +25,6 @@ function Copyright() {
   );
 }
 
-function PreFooter() {
-  return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-      }}
-    >
-      <Box sx={{ }}>
-        <img
-          src={
-            "https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
-          }
-          style={logoStyle}
-          alt=""
-        ></img>
-      </Box>
-      <Typography
-        component="span"
-        variant="h5"
-        sx={{
-          wordWrap: "break-word",
-          color: (theme) =>
-            theme.palette.mode === "light" ? "primary.main" : "primary.light",
-        }}
-      >
-        Ready to deploy? Start building with a free account.
-        <p>Speak to an expert for your Pro or Enterprise needs.</p>
-      </Typography>
-      <Button variant="contained" color="primary"
-      sx={{
-        marginTop: 2, 
-      }}
-      >
-              Start for free
-            </Button>
-    </Container>
-  );
-}
 
 export default function Footer() {
   return (
@@ -80,7 +38,6 @@ export default function Footer() {
       textAlign: { sm: "center", md: "left" },
     }}
     >
-    <PreFooter />
       <Box
         sx={{
           display: "flex",
@@ -108,34 +65,6 @@ export default function Footer() {
                 alt=""
               />
             </Box>
-            {/* <Typography variant="body2" fontWeight={600} gutterBottom>
-              Newsletter
-            </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe to our newsletter for weekly updates and promotions.
-            </Typography>
-            <Stack direction="row" spacing={1} useFlexGap>
-              <TextField
-                id="outlined-basic"
-                hiddenLabel
-                size="small"
-                variant="outlined"
-                fullWidth
-                aria-label="Enter your email address"
-                placeholder="Your email address"
-                inputProps={{
-                  autocomplete: "off",
-                  ariaLabel: "Enter your email address",
-                }}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{ flexShrink: 0 }}
-              >
-                Subscribe
-              </Button>
-            </Stack> */}
           </Box>
         </Box>
         <Box
@@ -180,9 +109,6 @@ export default function Footer() {
           <Link color="text.secondary" href="#">
             Careers
           </Link>
-          {/* <Link color="text.secondary" href="#">
-            Press
-          </Link> */}
         </Box>
         <Box
           sx={{

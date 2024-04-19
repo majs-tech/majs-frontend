@@ -11,18 +11,6 @@ import { makeStyles } from "@mui/styles";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 const useStyles = makeStyles((theme) => ({
   logo: {
     width: "200px",
@@ -59,11 +47,10 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-  let name, value;
+  let value;
 
   const handleInputs = (e) => {
     console.log(e);
-    //name = e.target.name;
     value = e.target.value;
     setUser({ ...user, [e.target.id]: value });
   };
@@ -96,7 +83,7 @@ export default function SignUp() {
     // } else {
     
     // }
-    if (res.status == 200) {
+    if (res.status === 200) {
       window.alert(" Registration Successfull");
       console.log("Successfull Registration");
       history.push("/product");
@@ -204,8 +191,8 @@ export default function SignUp() {
                 />
               }
               label={
-                <Typography variant="body2" style={{ fontSize: "1rem" }}>
-                  By clicking on Sign Up, you agree to our Terms & Conditions.
+                <Typography variant="body3" style={{ fontSize: "1rem" }}>
+                  By clicking on Sign Up, you agree to our Terms & Conditions
                 </Typography>
               }
             />
@@ -220,7 +207,7 @@ export default function SignUp() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <Link href="/signin" variant="body2">
                   {"Already have an account? Sign In"}
                 </Link>
               </Grid>

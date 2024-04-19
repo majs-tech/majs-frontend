@@ -250,7 +250,7 @@ export default function Features() {
             }}
           >
             <img
-            src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
+            src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1710138230/majs-tech/Untitled_design_1_f2h9at.png"
             alt=""
             >
             </img>

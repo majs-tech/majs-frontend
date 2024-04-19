@@ -9,17 +9,24 @@
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
     "@mui/styles": "^5.15.12",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.0.93",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.51.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "tailwind-merge": "^2.2.1",
+    "vite": "^5.2.8",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^4.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -50,7 +57,7 @@
     "tailwindcss": "^3.4.1"
   },
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
