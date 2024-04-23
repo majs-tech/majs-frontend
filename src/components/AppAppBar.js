@@ -95,7 +95,7 @@ function AppAppBar() {
                       </Link>
                     </Typography>
                   </MenuItem>
-                  <MenuItem
+                  {/* <MenuItem
                     //onClick={() => scrollToSection('features')}
                     sx={{ py: "6px", px: "15px" }}
                   >
@@ -107,8 +107,8 @@ function AppAppBar() {
                         Copilot
                       </Link>
                     </Typography>
-                  </MenuItem>
-                  <MenuItem
+                  </MenuItem> */}
+                  {/* <MenuItem
                     //onClick={() => scrollToSection('highlights')}
                     sx={{ py: "6px", px: "12px" }}
                   >
@@ -120,17 +120,17 @@ function AppAppBar() {
                         Docs
                       </Link>
                     </Typography>
-                  </MenuItem>
+                  </MenuItem> */}
                   <MenuItem
                     //onClick={() => scrollToSection('faq')}
                     sx={{ py: "6px", px: "12px" }}
                   >
                     <Typography variant="body2" color="text.primary">
                       <Link
-                        to="/developers"
+                        to="/terms"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                        Developers
+                        Terms & Conditions
                       </Link>
                     </Typography>
                   </MenuItem>
@@ -212,22 +212,22 @@ function AppAppBar() {
                         Deploy
                       </Link>
                     </MenuItem>
-                    <MenuItem>
+                    {/* <MenuItem>
                       <Link
                         to="/copilot"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
                         Copilot
                       </Link>
-                    </MenuItem>
-                    <MenuItem>
+                    </MenuItem> */}
+                    {/* <MenuItem>
                       <Link
                         to="/docs"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
                         Docs
                       </Link>
-                    </MenuItem>
+                    </MenuItem> */}
                     <MenuItem>
                       <Link
                         to="/pricing"
@@ -238,10 +238,10 @@ function AppAppBar() {
                     </MenuItem>
                     <MenuItem>
                       <Link
-                        to="/developers"
+                        to="/terms"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                        Developers
+                        Terms & Conditions
                       </Link>
                     </MenuItem>
                     <Divider />

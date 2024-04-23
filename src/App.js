@@ -13,8 +13,8 @@ import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Pro from "./components/Pro";
 import Terms from "./components/Terms"; 
-import Copilot from "./components/Copilot";
-import Docs from "./components/Docs";
+// import Copilot from "./components/Copilot";
+// import Docs from "./components/Docs";
 
 
 function App() {
@@ -27,8 +27,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/product" component={Pro} />
-          <Route path="/copilot" component={Copilot} />
-          <Route path="/docs" component={Docs} />
+          {/* <Route path="/copilot" component={Copilot} /> */}
+          {/* <Route path="/docs" component={Docs} /> */}
           <Route path="/signin" component={Signin}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/terms" component={Terms}/> 

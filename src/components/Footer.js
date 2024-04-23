@@ -9,7 +9,6 @@ import FacebookIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/X";
 
-
 const logoStyle = {
   width: "140px",
   height: "auto",
@@ -18,25 +17,23 @@ const logoStyle = {
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      
       <Link href=""></Link>
       {new Date().getFullYear()}
     </Typography>
   );
 }
 
-
 export default function Footer() {
   return (
     <Container
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: { xs: 4, sm: 8 },
-      py: { xs: 8, sm: 8 },
-      textAlign: { sm: "center", md: "left" },
-    }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: { xs: 4, sm: 8 },
+        py: { xs: 8, sm: 8 },
+        textAlign: { sm: "center", md: "left" },
+      }}
     >
       <Box
         sx={{
@@ -44,7 +41,7 @@ export default function Footer() {
           flexDirection: { xs: "column", sm: "row" },
           width: "100%",
           justifyContent: "space-between",
-          py: { sm: 8}
+          py: { sm: 8 },
         }}
       >
         <Box
@@ -83,9 +80,9 @@ export default function Footer() {
           <Link color="text.secondary" href="#">
             Solutions
           </Link>
-          <Link color="text.secondary" href="#">
+          {/* <Link color="text.secondary" href="#">
             Docs
-          </Link>
+          </Link> */}
           <Link color="text.secondary" href="#">
             Pricing
           </Link>
@@ -120,7 +117,7 @@ export default function Footer() {
           <Typography variant="body2" fontWeight={600}>
             Legal
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="/terms">
             Terms
           </Link>
           <Link color="text.secondary" href="#">
@@ -148,7 +145,7 @@ export default function Footer() {
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="terms">
             Terms of Service
           </Link>
           <Copyright />

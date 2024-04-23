@@ -354,7 +354,7 @@ const Product = () => {
           </Grid>
           <Grid item md={6}></Grid>
 
-          <Grid item md={12} className={classes.buttonContainer}>
+          <Grid item md={6} className={classes.buttonContainer}>
             <Button variant="contained" color="primary" type="submit">
               Submit
             </Button>
@@ -364,7 +364,9 @@ const Product = () => {
               </Grid>
     </Container>
     </Box>
+    
   );
+  
 };
 
 export default Product;
