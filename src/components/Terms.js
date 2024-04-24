@@ -34,8 +34,11 @@ function Terms() {
           <Typography color="primary" component="h1" variant="h2">
             Terms and Conditions
           </Typography>
+          <br></br>
 
-          <Typography color="white" component="h2" variant="h4">Welcome to majs.tech!</Typography>
+          <Typography color="white" component="h2" variant="h4">
+            Welcome to majs.tech!
+          </Typography>
 
           <Typography>
             These terms and conditions outline the rules and regulations for the
@@ -66,7 +69,8 @@ function Terms() {
             or they, are taken as interchangeable and therefore as referring to
             same.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Cookies</strong>
           </Typography>
@@ -83,7 +87,8 @@ function Terms() {
             visiting our website. Some of our affiliate/advertising partners may
             also use cookies.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>License</strong>
           </Typography>
@@ -98,10 +103,10 @@ function Terms() {
 
           <Typography>You must not:</Typography>
           <ul>
-            <li>Republish material from majs.tech</li>
-            <li>Sell, rent or sub-license material from majs.tech</li>
-            <li>Reproduce, duplicate or copy material from majs.tech</li>
-            <li>Redistribute content from majs.tech</li>
+            <li>1. Republish material from majs.tech</li>
+            <li>2. Sell, rent or sub-license material from majs.tech</li>
+            <li>3. Reproduce, duplicate or copy material from majs.tech</li>
+            <li>4. Redistribute content from majs.tech</li>
           </ul>
 
           <Typography>
@@ -136,21 +141,21 @@ function Terms() {
 
           <ul>
             <li>
-              You are entitled to post the Comments on our website and have all
-              necessary licenses and consents to do so;
+              1. You are entitled to post the Comments on our website and have
+              all necessary licenses and consents to do so;
             </li>
             <li>
-              The Comments do not invade any intellectual property right,
+              2. The Comments do not invade any intellectual property right,
               including without limitation copyright, patent or trademark of any
               third party;
             </li>
             <li>
-              The Comments do not contain any defamatory, libelous, offensive,
-              indecent or otherwise unlawful material which is an invasion of
-              privacy
+              3. The Comments do not contain any defamatory, libelous,
+              offensive, indecent or otherwise unlawful material which is an
+              invasion of privacy
             </li>
             <li>
-              The Comments will not be used to solicit or promote business or
+              4. The Comments will not be used to solicit or promote business or
               custom or present commercial activities or unlawful activity.
             </li>
           </ul>
@@ -160,7 +165,8 @@ function Terms() {
             reproduce, edit and authorize others to use, reproduce and edit any
             of your Comments in any and all forms, formats or media.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Hyperlinking to our Content</strong>
           </Typography>
@@ -171,25 +177,27 @@ function Terms() {
           </Typography>
 
           <ul>
-            <li>Government agencies;</li>
-            <li>Search engines;</li>
-            <li>News organizations;</li>
+            <li>1. Government agencies;</li>
+            <li>2. Search engines;</li>
+            <li>3. News organizations;</li>
             <li>
-              Online directory distributors may link to our Website in the same
-              manner as they hyperlink to the Websites of other listed
-              businesses; and
+              4. Online directory distributors may link to our Website in the
+              same manner as they hyperlink to the Websites of other listed
+              businesses;
             </li>
             <li>
-              System wide Accredited Businesses except soliciting non-profit
+              5. System wide Accredited Businesses except soliciting non-profit
               organizations, charity shopping malls, and charity fundraising
               groups which may not hyperlink to our Web site.
             </li>
           </ul>
-
+          <br></br>
           <Typography>
             These organizations may link to our home page, to publications or to
-            other Website information so long as the link: (a) is not in any way
-            deceptive; (b) does not falsely imply sponsorship, endorsement or
+            other Website information so long as the link: 
+            (a) is not in any way
+            deceptive; 
+            (b) does not falsely imply sponsorship, endorsement or
             approval of the linking party and its products and/or services; and
             (c) fits within the context of the linking party's site.
           </Typography>
@@ -201,14 +209,14 @@ function Terms() {
 
           <ul>
             <li>
-              commonly-known consumer and/or business information sources;
+              1. commonly-known consumer and/or business information sources;
             </li>
-            <li>dot.com community sites;</li>
-            <li>associations or other groups representing charities;</li>
-            <li>online directory distributors;</li>
-            <li>internet portals;</li>
-            <li>accounting, law and consulting firms; and</li>
-            <li>educational institutions and trade associations.</li>
+            <li>2. dot.com community sites;</li>
+            <li>3. associations or other groups representing charities;</li>
+            <li>4. online directory distributors;</li>
+            <li>5. internet portals;</li>
+            <li>6. accounting, law and consulting firms; and</li>
+            <li>7. educational institutions and trade associations.</li>
           </ul>
 
           <Typography>
@@ -238,7 +246,9 @@ function Terms() {
             to link. Wait 2-3 weeks for a response.
           </Typography>
 
-          <Typography>Approved organizations may hyperlink to our Website as follows:</Typography>
+          <Typography>
+            Approved organizations may hyperlink to our Website as follows:
+          </Typography>
 
           <ul>
             <li>By use of our corporate name; or</li>
@@ -254,7 +264,8 @@ function Terms() {
             No use of majs.tech's logo or other artwork will be allowed for
             linking absent a trademark license agreement.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>IFrames</strong>
           </Typography>
@@ -263,7 +274,8 @@ function Terms() {
             frames around our Webpages that alter in any way the visual
             presentation or appearance of our Website.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Content Liability</strong>
           </Typography>
@@ -276,7 +288,8 @@ function Terms() {
             which infringes, otherwise violates, or advocates the infringement
             or other violation of, any third party rights.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Reservations of Rights</strong>
           </Typography>
@@ -289,7 +302,8 @@ function Terms() {
             By continuously linking to our Website, you agree to be bound to and
             follow these linking terms and conditions.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Removal of links from our website</strong>
           </Typography>
@@ -307,7 +321,8 @@ function Terms() {
             ensure that the website remains available or that the material on
             the website is kept up to date.
           </Typography>
-
+          <br></br>
+          <br></br>
           <Typography component="h3" variant="h5">
             <strong>Disclaimer</strong>
           </Typography>
@@ -320,19 +335,19 @@ function Terms() {
 
           <ul>
             <li>
-              limit or exclude our or your liability for death or personal
+              1. limit or exclude our or your liability for death or personal
               injury;
             </li>
             <li>
-              limit or exclude our or your liability for fraud or fraudulent
+              2. limit or exclude our or your liability for fraud or fraudulent
               misrepresentation;
             </li>
             <li>
-              limit any of our or your liabilities in any way that is not
+              3. limit any of our or your liabilities in any way that is not
               permitted under applicable law; or
             </li>
             <li>
-              exclude any of our or your liabilities that may not be excluded
+              4. exclude any of our or your liabilities that may not be excluded
               under applicable law.
             </li>
           </ul>

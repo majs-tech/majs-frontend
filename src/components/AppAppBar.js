@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { ReactSession } from 'react-client-session'; 
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -11,14 +12,30 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
+import Avatar from "@mui/material/Avatar";
 const logoStyle = {
   width: "140px",
   height: "auto",
   cursor: "pointer",
 };
 
+
+const scrollToSection = (sectionId) => {
+  const sectionElement = document.getElementById(sectionId);
+  const offset = 128;
+  if (sectionElement) {
+    const targetScroll = sectionElement.offsetTop - offset;
+    sectionElement.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth',
+    });
+  }
+};
+
 function AppAppBar() {
   const [open, setOpen] = useState(false);
+  const isLoggedIn = ReactSession.get("isLoggedIn");
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -83,7 +100,6 @@ function AppAppBar() {
 
                 <Box sx={{ display: { xs: "none", md: "flex" } }}>
                   <MenuItem
-                    //onClick={() => scrollToSection('features')}
                     sx={{ py: "6px", px: "15px" }}
                   >
                     <Typography variant="body2" color="text.primary">
@@ -91,25 +107,19 @@ function AppAppBar() {
                         to="/product"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                        Deploy
+                        Product
                       </Link>
                     </Typography>
                   </MenuItem>
-                  {/* <MenuItem
-                    //onClick={() => scrollToSection('features')}
+                  <MenuItem
+                    onClick={() => scrollToSection('pricing')}
                     sx={{ py: "6px", px: "15px" }}
                   >
                     <Typography variant="body2" color="text.primary">
-                      <Link
-                        to="/copilot"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Copilot
-                      </Link>
+                        Pricing
                     </Typography>
-                  </MenuItem> */}
-                  {/* <MenuItem
-                    //onClick={() => scrollToSection('highlights')}
+                  </MenuItem>
+                  <MenuItem
                     sx={{ py: "6px", px: "12px" }}
                   >
                     <Typography variant="body2" color="text.primary">
@@ -120,18 +130,13 @@ function AppAppBar() {
                         Docs
                       </Link>
                     </Typography>
-                  </MenuItem> */}
+                  </MenuItem>
                   <MenuItem
-                    //onClick={() => scrollToSection('faq')}
+                    onClick={() => scrollToSection('footer')}
                     sx={{ py: "6px", px: "12px" }}
                   >
                     <Typography variant="body2" color="text.primary">
-                      <Link
-                        to="/terms"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Terms & Conditions
-                      </Link>
+                      Contact
                     </Typography>
                   </MenuItem>
                 </Box>
@@ -209,71 +214,68 @@ function AppAppBar() {
                         to="/product"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                        Deploy
+                       Product
                       </Link>
                     </MenuItem>
-                    {/* <MenuItem>
-                      <Link
-                        to="/copilot"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Copilot
-                      </Link>
-                    </MenuItem> */}
-                    {/* <MenuItem>
+                    
+                    <MenuItem>
                       <Link
                         to="/docs"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
                         Docs
                       </Link>
-                    </MenuItem> */}
-                    <MenuItem>
-                      <Link
-                        to="/pricing"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Pricing
-                      </Link>
                     </MenuItem>
+                    
                     <MenuItem>
                       <Link
-                        to="/terms"
+                        to="#"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                        Terms & Conditions
+                        Developers
                       </Link>
                     </MenuItem>
                     <Divider />
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      component="a"
-                      target="_blank"
-                      sx={{ width: "100%", marginTop: "20px" }}
-                    >
-                      <Link
-                        to="/signup"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Sign Up
-                      </Link>
-                    </Button>
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-in/"
-                      target="_blank"
-                      sx={{ width: "100%", marginTop: "20px" }}
-                    >
-                      <Link
-                        to="/signin"
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        Sign In
-                      </Link>
-                    </Button>
+                    {isLoggedIn? (
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                      {/* Display avatar icon for logged-in user */}
+                      <Avatar sx={{ mr: 2 }}>{/* You can customize the avatar here */}</Avatar>
+                      <p>Welcome</p>
+                    </div>
+                    ) : (
+                      <div>
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          component="a"
+                          target="_blank"
+                          sx={{ width: "100%", marginTop: "20px" }}
+                        >
+                          <Link
+                            to="/signup"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            Sign Up
+                          </Link>
+                        </Button>
+                        <Button
+                          color="primary"
+                          variant="outlined"
+                          component="a"
+                          href="/material-ui/getting-started/templates/sign-in/"
+                          target="_blank"
+                          sx={{ width: "100%", marginTop: "20px" }}
+                        >
+                          <Link
+                            to="/signin"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            Sign In
+                          </Link>
+                        </Button>
+                      </div>
+                    )
+                    }
                   </Box>
                 </Drawer>
               </Box>

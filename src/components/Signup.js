@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
+import { ReactSession } from "react-client-session";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
-  const history = useHistory()
+  const history = useHistory();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -57,39 +58,29 @@ export default function SignUp() {
 
   const MakeAPICall = async (e) => {
     e.preventDefault();
-    console.log("REACHED HERE")
+    console.log("REACHED HERE");
     const { email, password } = user;
-    // const res = await fetch("http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001/auth/signup", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     email,
-    //     password,
-    //   }),
-    // });
-    const payload = {
-      username : email, password : password
-    }
-    console.log(payload)
-    const res = await axios.post("http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001/auth/signup", payload)
-    console.log(res)
 
-    // const data = await res.json();
-    // if ((data.status === 422 || !data)) {
-    //   window.alert("INvalid Registration");
-    //   console.log("INvalid Registration");
-    // } else {
-    
-    // }
+    const payload = {
+      username: email,
+      password: password,
+    };
+    console.log(payload);
+    const res = await axios.post("http://api.majs.live/auth/signup", payload);
+    console.log(res);
+
     if (res.status === 200) {
       window.alert(" Registration Successfull");
       console.log("Successfull Registration");
+
+      // Store login state in session (assuming successful registration)
+      ReactSession.set("isLoggedIn", true);
+      ReactSession.set("username", email); // Optional: Store username
+
       history.push("/product");
     } else {
-      window.alert("INvalid Registration");
-      console.log("INvalid Registration");
+      window.alert("Invalid Registration");
+      console.log("Invalid Registration");
     }
   };
 
@@ -146,74 +137,75 @@ export default function SignUp() {
             noValidate
             onSubmit={handleSubmit}
             sx={{ mt: 1 }}
-          ><form method="POST">
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              placeholder="Email Address"
-              name="email"
-              defaultValue={user.email}
-              onChange={handleInputs}
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              placeholder="Password"
-              defaultValue={user.password}
-              onChange={handleInputs}
-              type="password"
-              id="password"
-            />
+          >
+            <form method="POST">
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                placeholder="Email Address"
+                name="email"
+                defaultValue={user.email}
+                onChange={handleInputs}
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                placeholder="Password"
+                defaultValue={user.password}
+                onChange={handleInputs}
+                type="password"
+                id="password"
+              />
 
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              placeholder="Confirm Password"
-              type="password"
-              id="password"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  value="agree"
-                  color="primary"
-                  required
-                  checked={isChecked}
-                  onChange={handleCheckboxChange}
-                />
-              }
-              label={
-                <Typography variant="body3" style={{ fontSize: "1rem" }}>
-                  By clicking on Sign Up, you agree to our Terms & Conditions
-                </Typography>
-              }
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={MakeAPICall}
-            >
-              Sign Up
-            </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="/signin" variant="body2">
-                  {"Already have an account? Sign In"}
-                </Link>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                placeholder="Confirm Password"
+                type="password"
+                id="password"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    value="agree"
+                    color="primary"
+                    required
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                }
+                label={
+                  <Typography variant="body3" style={{ fontSize: "1rem" }}>
+                    By clicking on Sign Up, you agree to our Terms & Conditions
+                  </Typography>
+                }
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                onClick={MakeAPICall}
+              >
+                Sign Up
+              </Button>
+              <Grid container>
+                <Grid item>
+                  <Link href="/signin" variant="body2">
+                    {"Already have an account? Sign In"}
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-            {/* <Copyright sx={{ mt: 5 }} /> */}
-            </form></Box>
+            </form>
+          </Box>
         </Box>
       </Grid>
     </Grid>
