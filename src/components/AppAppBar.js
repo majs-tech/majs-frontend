@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { ReactSession } from 'react-client-session'; 
+import { ReactSession } from 'react-client-session';
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -35,7 +35,28 @@ const scrollToSection = (sectionId) => {
 
 function AppAppBar() {
   const [open, setOpen] = useState(false);
-  const isLoggedIn = ReactSession.get("isLoggedIn");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Set store type to localStorage once
+    ReactSession.setStoreType("localStorage");
+
+    // Update isLoggedIn state based on localStorage
+    const checkLoginStatus = () => {
+      const loggedInStatus = ReactSession.get("isLoggedIn") === "true";
+      setIsLoggedIn(loggedInStatus);
+    };
+
+    checkLoginStatus();
+
+    // Optionally: Listen for changes in localStorage
+    window.addEventListener('storage', checkLoginStatus);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('storage', checkLoginStatus);
+    };
+  }, []);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -69,7 +90,7 @@ function AppAppBar() {
                 flexShrink: 0,
                 borderRadius: "20px",
                 bgcolor:
-                  theme.palette.mode ==="rgba(255, 255, 255, 0.4)",
+                  theme.palette.mode === "rgba(255, 255, 255, 0.4)",
                 width: "100%",
                 backdropFilter: "blur(20px)",
                 maxHeight: 50,
@@ -116,7 +137,7 @@ function AppAppBar() {
                     sx={{ py: "6px", px: "15px" }}
                   >
                     <Typography variant="body2" color="text.primary">
-                        Pricing
+                      Pricing
                     </Typography>
                   </MenuItem>
                   <MenuItem
@@ -214,10 +235,10 @@ function AppAppBar() {
                         to="/product"
                         style={{ textDecoration: "none", color: "inherit" }}
                       >
-                       Product
+                        Product
                       </Link>
                     </MenuItem>
-                    
+
                     <MenuItem>
                       <Link
                         to="/docs"
@@ -226,7 +247,7 @@ function AppAppBar() {
                         Docs
                       </Link>
                     </MenuItem>
-                    
+
                     <MenuItem>
                       <Link
                         to="#"
@@ -236,12 +257,11 @@ function AppAppBar() {
                       </Link>
                     </MenuItem>
                     <Divider />
-                    {isLoggedIn? (
+                    {isLoggedIn ? (
                       <div style={{ display: 'flex', alignItems: 'center' }}>
-                      {/* Display avatar icon for logged-in user */}
-                      <Avatar sx={{ mr: 2 }}>{/* You can customize the avatar here */}</Avatar>
-                      <p>Welcome</p>
-                    </div>
+                        <Avatar sx={{ mr: 2 }}>{/* You can customize the avatar here */}</Avatar>
+                        <p>Welcome</p>
+                      </div>
                     ) : (
                       <div>
                         <Button

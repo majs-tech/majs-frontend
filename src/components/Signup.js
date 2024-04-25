@@ -74,6 +74,7 @@ export default function SignUp() {
       console.log("Successfull Registration");
 
       // Store login state in session (assuming successful registration)
+      ReactSession.setStoreType("localStorage");
       ReactSession.set("isLoggedIn", true);
       ReactSession.set("username", email); // Optional: Store username
 

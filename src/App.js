@@ -17,7 +17,6 @@ import Docs from "./components/Docs";
 
 function App() {
   const LPtheme = createTheme(getLPTheme("dark"));
-
   return (
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
